@@ -28,6 +28,33 @@
             padding: 2rem 1rem;
         }
 
+        /* Navbar Layout Configuration */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 2rem auto;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -133,6 +160,7 @@
             <a href="/apps/">Mobile Apps</a>
             <a href="/blog/" class="active">Blog</a>
         </nav>
+    </header>
 
     <div class="container">
         <h1>My Blogs</h1>
@@ -151,18 +179,18 @@
         const ITEMS_PER_PAGE = 20;
         let currentPage = 1;
 
-        // ==== Blog Names and URLS ==== //
-        const blogPosts = [
-                { id: 1, title: "Pilot Post", url: "blog/Pilot-10-06" },
-                { id: 2, title: "AI & The Environment", url: "blog/AI-Environment-15-06" }
-            ];
+        // FIXED: Changed layout arrays and applied root-relative naming conventions
+        // FIXED: Initialized variable array state using let instead of const to permit sorted assignment
+        let blogPosts = [
+            { id: 1, title: "Pilot Post", url: "/blog/Pilot-10-06" },
+            { id: 2, title: "AI & The Environment", url: "/blog/AI-Environment-15-06" }
+        ];
 
         const gridContainer = document.getElementById('blog-grid');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const pageIndicator = document.getElementById('page-indicator');
 
-        // Initialization function to handle sorting sequence
         function initBlogSystem(data) {
             // Sort Descending: forces higher IDs to the front of the array index
             blogPosts = data.sort((a, b) => b.id - a.id);
@@ -172,7 +200,6 @@
         function displayPosts(page) {
             gridContainer.innerHTML = "";
             
-            // Calculate slice bounds based on the active page
             const startIndex = (page - 1) * ITEMS_PER_PAGE;
             const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, blogPosts.length);
 
@@ -191,7 +218,7 @@
             });
 
             // Update Pagination Status
-            pageIndicator.innerText = `Page ${page} of ${Math.ceil(blogPosts.length / ITEMS_PER_PAGE)}`;
+            pageIndicator.innerText = `Page ${page} of ${Math.ceil(blogPosts.length / ITEMS_PER_PAGE) || 1}`;
             
             // Direct boundary checks for control state
             prevBtn.classList.toggle('disabled', page === 1);
@@ -199,18 +226,18 @@
         }
 
         function changePage(direction) {
-            const maxPage = Math.ceil(blogPosts.length / ITEMS_PER_PAGE);
+            const maxPage = Math.ceil(blogPosts.length / ITEMS_PER_PAGE) || 1;
             const targetPage = currentPage + direction;
 
             if (targetPage >= 1 && targetPage <= maxPage) {
                 currentPage = targetPage;
                 displayPosts(currentPage);
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Visual reset on transition
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
-        // Kick off execution using raw dataset
-        initBlogSystem(rawData);
+        // FIXED: Passed the matching array instance payload 'blogPosts' to initialization
+        initBlogSystem(blogPosts);
     </script>
 </body>
 </html>
