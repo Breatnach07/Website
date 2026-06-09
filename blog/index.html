@@ -4,87 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Directory</title>
+    <link rel="stylesheet" href="/styles.css">
     <style>
-        /* ==========================================================================
-           Master Stylesheet Integration (Matches your exact layout rules)
-           ========================================================================== */
-        
-        /* Core Layout resets */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: "Aptos Serif", Georgia, serif;
-        }
-
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Common Navbar Component */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1e293b;
-            padding: 1rem 2rem;
-            color: white;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
-
-        /* Turns navbar links into styled buttons */
-        .nav-links {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .nav-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.95rem;
-            border-radius: 4px;
-            background-color: #334155;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: white;
-            background-color: #475569;
-        }
-
-        .nav-links a.active {
-            color: white;
-            background-color: #2563eb;
-            font-weight: 600;
-        }
-
-        /* Layout Container */
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        /* Content Area Box */
-        .content-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        /* ==========================================================================
-           Blog Grid & Pagination Extensions (Themed to fit your framework)
-           ========================================================================== */
-        
+        /* Unique Layout Extensions for the Blog Grid Matrix */
         .blog-header-title {
             font-size: 2rem;
             font-weight: 700;
@@ -92,7 +14,6 @@
             color: #0f172a;
         }
 
-        /* 4x5 or auto-fill responsive grid matching your token gaps */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -100,7 +21,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Rectangular Blog Card Component styled like your app metadata blocks */
         .blog-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -137,14 +57,13 @@
             color: #2563eb;
         }
 
-        /* Metadata Timestamp Configuration */
         .blog-date {
             font-size: 0.85rem;
-            color: #64748b; /* Muted slate color */
+            color: #64748b;
             font-weight: 400;
         }
 
-        /* Pagination Component Custom Engineered to Match Tab styling rules */
+        /* Pagination Controls matching your Tab aesthetics */
         .pagination {
             display: flex;
             justify-content: center;
@@ -220,24 +139,22 @@
     </div>
 
     <script>
-        // Data and Pagination System configuration rules
         const ITEMS_PER_PAGE = 20;
         let currentPage = 1;
 
         // ==== Blog Titles and Dates ==== //
-        const blogPosts = [
+        let blogPosts = [
             { id: 1, title: "Pilot Post", date: "09 June 2026", url: "/blog/Pilot-09-06" },
             { id: 2, title: "AI & The Environment", date: "15 June 2026", url: "/blog/AI-Environment-15-06" }
         ];
 
-        // Global element handlers
         const gridContainer = document.getElementById('blog-grid');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const pageIndicator = document.getElementById('page-indicator');
 
         function initBlogSystem(data) {
-            // Sort Descending: O(n log n) execution order mapping
+            // Sorts array by ID descending before execution starts
             blogPosts = data.sort((a, b) => b.id - a.id);
             displayPosts(currentPage);
         }
@@ -264,7 +181,6 @@
                 gridContainer.appendChild(card);
             });
 
-            // Prevent divide-by-zero layout collapse on empty arrays
             const totalPages = Math.ceil(blogPosts.length / ITEMS_PER_PAGE) || 1;
             pageIndicator.innerText = `Page ${page} of ${totalPages}`;
             
@@ -283,7 +199,7 @@
             }
         }
 
-        // Initialize engine
+        // Initialize Engine execution
         initBlogSystem(blogPosts);
     </script>
 </body>
