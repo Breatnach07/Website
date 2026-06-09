@@ -4,12 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eden Breatnach</title>
-    <!-- Relative path to root stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ==========================================================================
+           Sudoku Engine Styles Component (Integrated with your system colors)
+           ========================================================================== */
+        .sudoku-container {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* 9x9 Grid System using your palette variables */
+        .sudoku-board {
+            display: grid;
+            grid-template-columns: repeat(9, minmax(30px, 45px));
+            grid-template-rows: repeat(9, minmax(30px, 45px));
+            border: 3px solid #1e293b;
+            background-color: #1e293b;
+            gap: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .sudoku-cell {
+            background: #ffffff;
+            border: none;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            font-family: "Aptos Serif", Georgia, serif;
+            padding: 0;
+            outline: none;
+            transition: all 0.15s ease;
+        }
+
+        /* Enforcing 3x3 sub-grid sector boundaries */
+        .sudoku-cell:nth-child(3n) { border-right: 2px solid #1e293b; }
+        .sudoku-cell:nth-child(9n) { border-right: none; }
+        
+        .sudoku-board > :nth-child(ch) { border-bottom: 2px solid #1e293b; }
+        /* JS applies specific row classes below to handle vertical grid boundaries */
+        .row-2, .row-5 { border-bottom: 2px solid #1e293b; }
+
+        /* Input states rules */
+        .sudoku-cell:focus {
+            background-color: #e2e8f0;
+        }
+
+        .sudoku-cell.original {
+            background-color: #f1f5f9;
+            color: #475569;
+            cursor: not-allowed;
+        }
+
+        .sudoku-cell.invalid {
+            background-color: #fee2e2 !important;
+            color: #dc2626;
+        }
+
+        /* Controls block layout */
+        .sudoku-controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .sudoku-btn {
+            background-color: #334155;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sudoku-btn:hover {
+            background-color: #475569;
+        }
+
+        .sudoku-btn.primary-btn {
+            background-color: #2563eb;
+        }
+
+        .sudoku-btn.primary-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .sudoku-status {
+            font-size: 1rem;
+            font-weight: 600;
+            min-height: 1.5rem;
+        }
+        
+        .status-success { color: #16a34a; }
+        .status-error { color: #dc2626; }
+    </style>
 </head>
 <body>
 
-    <!-- -- Site Navigation Header -- -->
     <header class="navbar">
         <div class="logo">Eden Breatnach</div>
         <nav class="nav-links">
@@ -21,23 +120,20 @@
     </header>
 
 
-    <!-- -- Page Content -- -->
     <main class="container">
         <div class="content-card">
 
-            <!-- -- About Me -- -->
             <h2>About Me</h2>
             <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #334155;">
                 Hey there! Is mise Éidín. I’m an Electronic Engineering student at Trinity College Dublin. I am obsessed with building robots, writing software, and talking tech with anyone who will listen. 
                 <div style="height: 1.2mm;"></div>
                 This website is a space where my personal projects are on display - and a series of android apps are available to download for free!
                 <br>
-                I also have a <italics>blog</italics> - which is just full of thoughts and opinions about new tech.
+                I also have a <em>blog</em> - which is just full of thoughts and opinions about new tech.
                 <br>
                 If you ever want to chat, feel free to reach out to me on LinkedIn!
                 <br>
                 <div style="height: 1.2mm;"></div>
-                <!-- LinkedIn Icon -->
                 <a href="https://linkedin.com/in/breatnach07" target="_blank" rel="noopener noreferrer" style="display: inline-block; text-decoration: none;">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
                     alt="LinkedIn Profile" 
@@ -47,31 +143,142 @@
                 </a>
                 <div style="height: 1.2mm;"></div>
 
-            <!-- -- Facts -- -->    
             </p>
             <h3 style="margin-bottom: 0.75rem; color: #0f172a;">Quick Facts</h3>
             <ul style="list-style-type: square; margin-left: 1.5rem; margin-bottom: 2rem; color: #475569; display: flex; flex-direction: column; gap: 0.4rem;">
                 <li><strong>Location:</strong> Louth, Ireland & Dublin, Ireland</li>
                 <li><strong>Education:</strong> Currently Pursuing an Integrated Master’s Degree in Electronic Engineering, Trinity College Dublin</li>
                 <li><strong>Interests:</strong> Robotics, Software Development, Tech Innovation, Aviation</li>
-                <li><strong>Contact:</strong> <a href="mailto:placeholder@email.com">placeholder@email.com</a></li> <!-- Replace with actual contact info!! -->
+                <li><strong>Contact:</strong> <a href="mailto:placeholder@email.com">placeholder@email.com</a></li>
             </ul>
             <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 2rem;">
 
-            <!-- -- Placeholder -- -->
-            <h2 style="margin-bottom: 1rem;">Placeholder</h2>  
-            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <h2 style="margin-bottom: 0.5rem;">Take a Break: Sudoku</h2>  
+            <p style="color: #475569; margin-bottom: 1.5rem;">Need an engineering distraction? Here is an algorithmic Sudoku board generated completely on the client side.</p>
+            
+            <div class="sudoku-container">
+                <div class="sudoku-board" id="sudoku-board"></div>
+                
+                <div class="sudoku-status" id="sudoku-status"></div>
 
-                <!-- Information -->
-
-                <p style="color: #475569; line-height: 1.6;">
-                    This is a placeholder section for future content. It can be used to share updates, blog posts, or any other information I want to communicate to visitors. Stay tuned for exciting updates!
-
-        
+                <div class="sudoku-controls">
+                    <button class="sudoku-btn primary-btn" onclick="checkPuzzleSolution()">Check Solution</button>
+                    <button class="sudoku-btn" onclick="generateNewGame()">New Game</button>
+                </div>
             </div>
+            
         </div>
-
     </main>
 
+    <script>
+        // Matrix Configuration rules
+        const boardElement = document.getElementById('sudoku-board');
+        const statusElement = document.getElementById('sudoku-status');
+        
+        let solutionMatrix = [];
+        let puzzleMatrix = [];
+
+        // Inlined Matrix Seed Generator (Ensures immediate game initialization)
+        function generateSudokuData() {
+            let base = [
+                [5,3,4,6,7,8,9,1,2],
+                [6,7,2,1,9,5,3,4,8],
+                [1,9,8,3,4,2,5,6,7],
+                [8,5,9,7,6,1,4,2,3],
+                [4,2,6,8,5,3,7,9,1],
+                [7,1,3,9,2,4,8,5,6],
+                [9,6,1,5,3,7,2,8,4],
+                [2,8,7,4,1,9,6,3,5],
+                [3,4,5,2,8,6,1,7,9]
+            ];
+            
+            // Randomly transform seeds via column/row band shifts to create unique layouts
+            for (let i = 0; i < 10; i++) {
+                const b = Math.floor(Math.random() * 3) * 3;
+                const r1 = b + Math.floor(Math.random() * 3);
+                const r2 = b + Math.floor(Math.random() * 3);
+                [base[r1], base[r2]] = [base[r2], base[r1]];
+            }
+            return base;
+        }
+
+        function generateNewGame() {
+            statusElement.innerText = "";
+            statusElement.className = "sudoku-status";
+            boardElement.innerHTML = "";
+            
+            solutionMatrix = generateSudokuData();
+            puzzleMatrix = solutionMatrix.map(row => row.map(val => Math.random() > 0.45 ? val : 0));
+
+            for (let r = 0; r < 9; r++) {
+                for (let c = 0; c < 9; c++) {
+                    const cell = document.createElement('input');
+                    cell.type = 'text';
+                    cell.maxLength = 1;
+                    cell.className = 'sudoku-cell';
+                    
+                    // Assign explicit sub-grid border lines via row index tracking
+                    if (r === 2 || r === 5) {
+                        cell.classList.add(`row-${r}`);
+                    }
+
+                    const val = puzzleMatrix[r][c];
+                    if (val !== 0) {
+                        cell.value = val;
+                        cell.classList.add('original');
+                        cell.readOnly = true;
+                    } else {
+                        // Event loop validations
+                        cell.addEventListener('input', (e) => {
+                            // Sanitization rule: force numerical values only
+                            e.target.value = e.target.value.replace(/[^1-9]/g, '');
+                            cell.classList.remove('invalid');
+                            statusElement.innerText = "";
+                        });
+                    }
+
+                    cell.dataset.row = r;
+                    cell.dataset.col = c;
+                    boardElement.appendChild(cell);
+                }
+            }
+        }
+
+        function checkPuzzleSolution() {
+            const cells = boardElement.querySelectorAll('.sudoku-cell');
+            let isComplete = true;
+            let hasErrors = false;
+
+            cells.forEach(cell => {
+                const r = parseInt(cell.dataset.row);
+                const c = parseInt(cell.dataset.col);
+                const value = cell.value.trim();
+
+                if (value === "") {
+                    isComplete = false;
+                    cell.classList.remove('invalid');
+                } else if (parseInt(value) !== solutionMatrix[r][c]) {
+                    hasErrors = true;
+                    cell.classList.add('invalid');
+                } else {
+                    cell.classList.remove('invalid');
+                }
+            });
+
+            if (hasErrors) {
+                statusElement.innerText = "Some numbers are misplaced. Fix highlighted fields.";
+                statusElement.className = "sudoku-status status-error";
+            } else if (!isComplete) {
+                statusElement.innerText = "Everything looks good so far! Complete the empty cells.";
+                statusElement.className = "sudoku-status status-success";
+            } else {
+                statusElement.innerText = "Sudoku complete! Excellent work.";
+                statusElement.className = "sudoku-status status-success";
+            }
+        }
+
+        // Initialize puzzle execution on load
+        generateNewGame();
+    </script>
 </body>
 </html>
