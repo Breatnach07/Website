@@ -5,148 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Directory</title>
     <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #212529;
-            --primary-color: #007bff;
-            --border-color: #dee2e6;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
+        /* ==========================================================================
+           Master Stylesheet Integration (Matches your exact layout rules)
+           ========================================================================== */
+        
+        /* Core Layout resets */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: "Aptos Serif", Georgia, serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #f4f6f9;
+            color: #333;
             line-height: 1.6;
-            padding: 2rem 1rem;
         }
 
-        /* Navbar Layout Configuration */
+        /* Common Navbar Component */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto 2rem auto;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
+            background-color: #1e293b;
+            padding: 1rem 2rem;
+            color: white;
         }
 
         .logo {
-            font-size: 1.5rem;
             font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        /* Turns navbar links into styled buttons */
+        .nav-links {
+            display: flex;
+            gap: 0.75rem;
         }
 
         .nav-links a {
-            color: var(--text-color);
+            color: #94a3b8;
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            background-color: #334155;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
         }
 
-        .nav-links a.active, .nav-links a:hover {
-            color: var(--primary-color);
+        .nav-links a:hover {
+            color: white;
+            background-color: #475569;
         }
 
+        .nav-links a.active {
+            color: white;
+            background-color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Layout Container */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
+        /* Content Area Box */
+        .content-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
-        /* 4x5 Grid layout for 20 items */
+        /* ==========================================================================
+           Blog Grid & Pagination Extensions (Themed to fit your framework)
+           ========================================================================== */
+        
+        .blog-header-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        /* 4x5 or auto-fill responsive grid matching your token gaps */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
         }
 
-        /* Rectangular Blog Box */
+        /* Rectangular Blog Card Component styled like your app metadata blocks */
         .blog-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 6px;
             padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 150px;
+            min-height: 140px;
         }
 
         .blog-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .blog-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            line-height: 1.4;
+            margin-bottom: 0.25rem;
         }
 
         .blog-link {
-            color: var(--text-color);
+            color: #1e293b;
             text-decoration: none;
+            transition: color 0.15s ease;
         }
 
         .blog-link:hover {
-            color: var(--primary-color);
+            color: #2563eb;
         }
 
-        /* Pagination Controls */
+        /* Metadata Timestamp Configuration */
+        .blog-date {
+            font-size: 0.85rem;
+            color: #64748b; /* Muted slate color */
+            font-weight: 400;
+        }
+
+        /* Pagination Component Custom Engineered to Match Tab styling rules */
         .pagination {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
         }
 
         .nav-arrow {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
+            background-color: #e2e8f0;
+            color: #475569;
+            border: none;
+            border-radius: 4px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            box-shadow: var(--shadow);
-            transition: background 0.2s;
+            transition: all 0.2s ease;
             user-select: none;
         }
 
         .nav-arrow:hover:not(.disabled) {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
+            background-color: #cbd5e1;
+            color: #0f172a;
         }
 
         .nav-arrow.disabled {
-            opacity: 0.5;
+            opacity: 0.4;
             cursor: not-allowed;
+            background-color: #f1f5f9;
+            color: #94a3b8;
         }
 
         #page-indicator {
+            font-size: 0.95rem;
             font-weight: 600;
+            color: #475569;
         }
     </style>
 </head>
@@ -163,36 +204,40 @@
     </header>
 
     <div class="container">
-        <h1>My Blogs</h1>
-        
-        <div class="blog-grid" id="blog-grid"></div>
+        <main class="content-card">
+            
+            <h1 class="blog-header-title">My Blogs</h1>
+            
+            <div class="blog-grid" id="blog-grid"></div>
 
-        <div class="pagination">
-            <div class="nav-arrow" id="prev-btn" onclick="changePage(-1)">&larr;</div>
-            <span id="page-indicator">Page 1</span>
-            <div class="nav-arrow" id="next-btn" onclick="changePage(1)">&rarr;</div>
-        </div>
+            <div class="pagination">
+                <div class="nav-arrow" id="prev-btn" onclick="changePage(-1)">&larr;</div>
+                <span id="page-indicator">Page 1</span>
+                <div class="nav-arrow" id="next-btn" onclick="changePage(1)">&rarr;</div>
+            </div>
+
+        </main>
     </div>
 
     <script>
-        // Configuration
+        // Data and Pagination System configuration rules
         const ITEMS_PER_PAGE = 20;
         let currentPage = 1;
 
-        // FIXED: Changed layout arrays and applied root-relative naming conventions
-        // FIXED: Initialized variable array state using let instead of const to permit sorted assignment
-        let blogPosts = [
-            { id: 1, title: "Pilot Post", url: "/blog/Pilot-10-06" },
-            { id: 2, title: "AI & The Environment", url: "/blog/AI-Environment-15-06" }
+        // ==== Blog Titles and Dates ==== //
+        const blogPosts = [
+            { id: 1, title: "Pilot Post", date: "10 June 2026", url: "/blog/Pilot-10-06" },
+            { id: 2, title: "AI & The Environment", date: "15 June 2026", url: "/blog/AI-Environment-15-06" }
         ];
 
+        // Global element handlers
         const gridContainer = document.getElementById('blog-grid');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const pageIndicator = document.getElementById('page-indicator');
 
         function initBlogSystem(data) {
-            // Sort Descending: forces higher IDs to the front of the array index
+            // Sort Descending: O(n log n) execution order mapping
             blogPosts = data.sort((a, b) => b.id - a.id);
             displayPosts(currentPage);
         }
@@ -205,22 +250,24 @@
 
             const pageItems = blogPosts.slice(startIndex, endIndex);
 
-            // Render execution
             pageItems.forEach(post => {
                 const card = document.createElement('div');
                 card.className = 'blog-card';
                 card.innerHTML = `
-                    <h2 class="blog-title">
-                        <a href="${post.url}" class="blog-link">${post.title} (ID: ${post.id})</a>
-                    </h2>
+                    <div>
+                        <h2 class="blog-title">
+                            <a href="${post.url}" class="blog-link">${post.title}</a>
+                        </h2>
+                        <div class="blog-date">${post.date}</div>
+                    </div>
                 `;
                 gridContainer.appendChild(card);
             });
 
-            // Update Pagination Status
-            pageIndicator.innerText = `Page ${page} of ${Math.ceil(blogPosts.length / ITEMS_PER_PAGE) || 1}`;
+            // Prevent divide-by-zero layout collapse on empty arrays
+            const totalPages = Math.ceil(blogPosts.length / ITEMS_PER_PAGE) || 1;
+            pageIndicator.innerText = `Page ${page} of ${totalPages}`;
             
-            // Direct boundary checks for control state
             prevBtn.classList.toggle('disabled', page === 1);
             nextBtn.classList.toggle('disabled', endIndex >= blogPosts.length);
         }
@@ -236,7 +283,7 @@
             }
         }
 
-        // FIXED: Passed the matching array instance payload 'blogPosts' to initialization
+        // Initialize engine
         initBlogSystem(blogPosts);
     </script>
 </body>
