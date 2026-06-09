@@ -27,17 +27,32 @@ body {
     font-size: 1.25rem;
 }
 
+/* Turns navbar links into styled buttons */
+.nav-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
 .nav-links a {
     color: #94a3b8;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    transition: color 0.2s;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    background-color: #334155; /* Button background */
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover {
     color: white;
-    border-bottom: 2px solid #38bdf8;
+    background-color: #475569;
+}
+
+.nav-links a.active {
+    color: white;
+    background-color: #2563eb; /* Distinct color for active button */
+    font-weight: 600;
 }
 
 /* Layout Container */
@@ -47,36 +62,41 @@ body {
     padding: 0 1rem;
 }
 
-/* Sub-Navigation Tabs */
+/* Sub-Navigation Tabs (Turns app/project links into buttons) */
 .tabs {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .tabs a {
     text-decoration: none;
-    padding: 0.75rem 1.2rem;
-    font-size: 0.95rem;
-    color: #64748b;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    color: #475569;
+    background-color: #e2e8f0; /* Default tab button gray */
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 500;
 }
 
 .tabs a:hover {
+    background-color: #cbd5e1;
     color: #0f172a;
 }
 
 .tabs a.active {
-    color: #2563eb;
-    border-bottom: 2px solid #2563eb;
+    color: white;
+    background-color: #2563eb; /* Highlighted sub-page button */
     font-weight: 600;
 }
 
 /* Content Area Box */
 .content-card {
     background: white;
-    padding: 1.5rem;
-    border-radius: 6px;
+    padding: 2rem;
+    border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
@@ -96,6 +116,7 @@ body {
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     border-radius: 4px;
+    font-weight: 500;
 }
 
 .btn:hover {
