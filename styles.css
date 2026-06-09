@@ -1,4 +1,4 @@
-/* Core Styling resets */
+/* Core Layout resets */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar */
+/* Common Navbar Component */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -27,17 +27,15 @@ body {
     font-size: 1.25rem;
 }
 
-nav .nav-link {
-    background: none;
-    border: none;
+.nav-links a {
     color: #94a3b8;
+    text-decoration: none;
     padding: 0.5rem 1rem;
-    cursor: pointer;
     font-size: 1rem;
     transition: color 0.2s;
 }
 
-nav .nav-link:hover, nav .nav-link.active {
+.nav-links a:hover, .nav-links a.active {
     color: white;
     border-bottom: 2px solid #38bdf8;
 }
@@ -49,16 +47,7 @@ nav .nav-link:hover, nav .nav-link.active {
     padding: 0 1rem;
 }
 
-/* SPA Routing System: Hide pages by default */
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-/* Tabs UI (Used for Projects and App Details) */
+/* Sub-Navigation Tabs */
 .tabs {
     display: flex;
     gap: 0.5rem;
@@ -66,41 +55,29 @@ nav .nav-link:hover, nav .nav-link.active {
     border-bottom: 2px solid #e2e8f0;
 }
 
-.tab-btn, .sub-tab-btn {
-    background: none;
-    border: none;
+.tabs a {
+    text-decoration: none;
     padding: 0.75rem 1.2rem;
-    cursor: pointer;
     font-size: 0.95rem;
     color: #64748b;
 }
 
-.tab-btn:hover, .sub-tab-btn:hover {
+.tabs a:hover {
     color: #0f172a;
 }
 
-.tab-btn.active, .sub-tab-btn.active {
+.tabs a.active {
     color: #2563eb;
     border-bottom: 2px solid #2563eb;
     font-weight: 600;
 }
 
-/* Tab content visibility */
-.project-details, .app-sub-details {
-    display: none;
+/* Content Area Box */
+.content-card {
     background: white;
     padding: 1.5rem;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.project-details.active, .app-sub-details.active {
-    display: block;
-}
-
-/* UI Components */
-.app-list {
-    margin-top: 1.5rem;
 }
 
 .app-card {
@@ -115,22 +92,12 @@ nav .nav-link:hover, nav .nav-link.active {
     display: inline-block;
     background-color: #2563eb;
     color: white;
-    border: none;
+    text-decoration: none;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     border-radius: 4px;
-    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #1d4ed8;
-}
-
-.back-btn {
-    background: none;
-    border: none;
-    color: #2563eb;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
 }
