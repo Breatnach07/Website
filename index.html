@@ -3,128 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eden Breatnach</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Eden Breatnach - Home</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
     <header class="navbar">
         <div class="logo">Eden Breatnach</div>
-        <nav>
-            <button class="nav-link active" onclick="showPage('home')">Home</button>
-            <button class="nav-link" onclick="showPage('projects')">Projects</button>
-            <button class="nav-link" onclick="showPage('apps')">Mobile Apps</button>
+        <nav class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/apps/">Mobile Apps</a>
         </nav>
     </header>
-
     <main class="container">
-        
-        <section id="home" class="page active">
-            <h1>About Me</h1>
-            <p>Welcome to my personal portfolio. I am a Software Engineering student focused on building high-performance applications, digital electronics, and robust software solutions. Explore my projects and mobile applications using the navigation above.</p>
-        </section>
-
-        <section id="projects" class="page">
-            <h1>Projects</h1>
-            <div class="tab-container">
-                <div class="tabs">
-                    <button class="tab-btn active" onclick="showProject('project1')">Project One</button>
-                    <button class="tab-btn" onclick="showProject('project2')">Project Two</button>
-                </div>
-                
-                <div class="tab-content">
-                    <div id="project1" class="project-details active">
-                        <h2>Project One Title</h2>
-                        <p>Detailed demonstration, technical stack, and architecture details for Project One go here.</p>
-                    </div>
-                    <div id="project2" class="project-details">
-                        <h2>Project Two Title</h2>
-                        <p>Detailed demonstration, technical stack, and architecture details for Project Two go here.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="apps" class="page">
-            <h1>Mobile Apps</h1>
-            <div class="app-list">
-                <div class="app-card">
-                    <h3>WakeMeUp</h3>
-                    <p>An innovative alarm utility designed for optimal waking cycles.</p>
-                    <button class="btn" onclick="showPage('wakemeup-hub')">View App Details</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="wakemeup-hub" class="page">
-            <button class="back-btn" onclick="showPage('apps')">← Back to Apps</button>
-            <h1>WakeMeUp</h1>
-            
-            <div class="tabs">
-                <button class="sub-tab-btn active" onclick="showAppSubPage('wm-about')">About</button>
-                <button class="sub-tab-btn" onclick="showAppSubPage('wm-download')">Download</button>
-                <button class="sub-tab-btn" onclick="showAppSubPage('wm-eula')">EULA</button>
-                <button class="sub-tab-btn" onclick="showAppSubPage('wm-privacy')">Privacy Policy</button>
-                <button class="sub-tab-btn" onclick="showAppSubPage('wm-history')">Version History</button>
-            </div>
-
-            <div class="sub-tab-content">
-                <div id="wm-about" class="app-sub-details active">
-                    <h3>About WakeMeUp</h3>
-                    <p>Details regarding what the app does, target audience, and core features.</p>
-                </div>
-                <div id="wm-download" class="app-sub-details">
-                    <h3>Download</h3>
-                    <p>Links to App Store, Google Play, or direct APK downloads.</p>
-                </div>
-                <div id="wm-eula" class="app-sub-details">
-                    <h3>End User License Agreement (EULA)</h3>
-                    <p>Legal terms and conditions for using WakeMeUp.</p>
-                </div>
-                <div id="wm-privacy" class="app-sub-details">
-                    <h3>Privacy Policy</h3>
-                    <p>Data collection guidelines, compliance statements, and user privacy details.</p>
-                </div>
-                <div id="wm-history" class="app-sub-details">
-                    <h3>Version History</h3>
-                    <ul>
-                        <li><strong>v1.0.0</strong> - Initial release with core features.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
+        <h1>About Me</h1>
+        <p>Welcome to my personal portfolio. I am a Software Engineering student focused on building projects, coding, and digital electronics.</p>
     </main>
-
-    <script>
-        // Main page routing
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update active state in top navbar
-            document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
-            const activeNav = Array.from(document.querySelectorAll('.nav-link')).find(btn => btn.getAttribute('onclick').includes(pageId));
-            if(activeNav) activeNav.classList.add('active');
-        }
-
-        // Project tab switching
-        function showProject(projectId) {
-            document.querySelectorAll('.project-details').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            
-            document.getElementById(projectId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
-        // App sub-page tab switching
-        function showAppSubPage(subPageId) {
-            document.querySelectorAll('.app-sub-details').forEach(sp => sp.classList.remove('active'));
-            document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
-            
-            document.getElementById(subPageId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
 </body>
 </html>
