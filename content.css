@@ -7,7 +7,7 @@
     min-width: 320px;                   /* Prevents it from crushing on mobile devices */
     margin-left: auto;                  /* Centers the box horizontally within the page */
     margin-right: auto;
-    margin-top: 180px;                  /* 75px navbar height + 40px padding gap */
+    margin-top: 115px;                  /* 75px navbar height + 40px padding gap */
     background-color: #ffffff;        /* Solid white card structure */
     padding: 40px;                      /* Internal breathing room for text */
     border-radius: 8px;                 /* Subtle edge smoothing */
