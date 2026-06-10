@@ -1,36 +1,36 @@
 .photo-grid {
 
+    margin-top: 20px;
+
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 12px;
-
-    margin-bottom: -2px;
+    gap: 18px;
 }
 
-.photo {
+.photo-box {
 
     height: 135px;
 
-    background-color: #0f6585;
+    border: 2px solid #07384a;
 
-    border: 2px solid #08394b;
+    background-color: #0b607e;
 
     overflow: hidden;
 }
 
-.photo img {
+.photo-box img {
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 
-    display: block;
+    transition: 0.3s;
 }
 
-.photo:hover img {
-    transform: scale(1.03);
-    transition: 0.2s;
+.photo-box:hover img {
+
+    transform: scale(1.05);
 }
