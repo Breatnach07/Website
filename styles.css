@@ -202,15 +202,3 @@ body {
     font-weight: 600;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 2rem;
-    color: #2563eb;        
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.back-btn:hover {
-    text-decoration: underline;
-}
