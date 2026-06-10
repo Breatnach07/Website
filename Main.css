@@ -1,51 +1,74 @@
+html,
 body {
     margin: 0;
-    background-color: #dddddd;
+    padding: 0;
+
+    background-color: #e5e5e5;
+
     font-family: Georgia, serif;
+
+    min-height: 100vh;
 }
 
-.content-box {
+.main-box {
 
-    width: 730px;
+    width: 760px;
 
-    margin: 50px auto;
+    margin: 45px auto 90px auto;
 
     border: 2px solid black;
 
-    background-color: #efefef;
+    background-color: #ececec;
 
-    padding: 10px 28px 30px 28px;
+    padding: 8px 20px 0 20px;
 
+    box-sizing: border-box;
+}
+
+.main-box h1 {
     text-align: center;
-}
-
-.content-box h1 {
+    margin-top: 0;
     margin-bottom: 5px;
+
+    font-size: 26px;
 }
 
-.content-box p {
-    text-align: left;
-    font-size: 18px;
+.main-box p {
+    font-size: 17px;
+    line-height: 1.15;
 }
 
-.social-icons {
+.main-box a {
+    color: #4f7f91;
+}
 
+.socials {
     display: flex;
     justify-content: center;
     gap: 80px;
 
-    margin: 20px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.social-icons img {
-    width: 60px;
-    cursor: pointer;
+.socials img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
 }
 
-h2 {
-    margin-bottom: 5px;
+.main-box h2 {
+    text-align: center;
+
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    font-size: 24px;
 }
 
 .gallery-text {
-    text-align: center !important;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
