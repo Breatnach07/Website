@@ -1,0 +1,27 @@
+/* ==========================================
+   1. Global CSS Reset & Setup
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    font: Serif;
+    background-color: #f8fafc; /* Light slate gray background for contrast */
+}
+
+.main-content {
+    margin-top: 180px; /* Keeps your container clear of the fixed navbar */
+    padding: 40px 20px;
+    width: 100%;
+}
+
