@@ -22,9 +22,9 @@
 }
 
 /* ==========================================
-   sitename & Typography
+   Logo & Typography
    ========================================== */
-.sitename h3 {
+.logo p {
     font-family: 'Aptos Serif', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16pt;            /* Exact size constraint requested */
     font-weight: 400;
