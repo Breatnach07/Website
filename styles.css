@@ -15,8 +15,8 @@ html, body {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc; 
+    font: Serif;
+    background-color: #f8fafc; /* Light slate gray background for contrast */
 }
 
 .main-content {
