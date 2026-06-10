@@ -11,15 +11,19 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Container spans edge-to-edge with explicit edge padding */
+/* ==========================================
+   Updated Navbar Container Layout
+   ========================================== */
 .nav-container {
     width: 100%; 
-    padding: 0 30px; 
+    /* Reduced right padding from 30px to 15px to maximize usable space */
+    padding: 0 15px 0 30px; 
     height: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 
 /* ==========================================
    sitename & Typography
@@ -35,22 +39,29 @@
 }
 
 /* ==========================================
-   Navigation Menu & Buttons
+   Optimized Navigation Menu 
    ========================================== */
 .nav-menu ul {
     list-style: none;
     display: flex;
-    gap: 12px; 
+    /* Reduced button gap from 12px to 8px to save horizontal space */
+    gap: 8px; 
+    /* Ensures items pack cleanly together tightly without line wraps */
+    flex-wrap: nowrap; 
 }
 
 .nav-btn {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
-    padding: 12px 24px; /* Distinct box padding */
+    /* Balanced internal padding: 10px vertical, 16px horizontal */
+    padding: 10px 16px; 
     border-radius: 6px;
     transition: background-color 0.2s ease, color 0.2s ease;
     display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Prevents the text within buttons from forcing text line breaks */
+    white-space: nowrap; 
 }
 
 /* Inactive State: Muted Blue/Grey Box */
