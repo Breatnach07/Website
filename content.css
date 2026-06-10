@@ -2,13 +2,35 @@
    Central Content Card Architecture
    ========================================== */
 .content-container {
-    width: 50%;                 /* Takes up exactly half the webpage width */
-    max-width: 900px;           /* Prevents it from getting too wide on ultra-wide monitors */
-    min-width: 320px;           /* Prevents it from crushing on mobile devices */
-    margin: 0 auto;             /* Centers the box horizontally within the page */
-    background-color: #ffffff;  /* Solid white card structure */
-    padding: 40px;              /* Internal breathing room for text */
-    border-radius: 8px;         /* Subtle edge smoothing */
+    width: 50%;                         /* Takes up exactly half the webpage width */
+    max-width: 900px;                   /* Prevents it from getting too wide on ultra-wide monitors */
+    min-width: 320px;                   /* Prevents it from crushing on mobile devices */
+    margin: 0 auto;                     /* Centers the box horizontally within the page */
+    margin-top: 115px;                  /* 75px navbar height + 40px padding gap */
+    background-color: #ffffff;        /* Solid white card structure */
+    padding: 40px;                      /* Internal breathing room for text */
+    border-radius: 8px;                 /* Subtle edge smoothing */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   Typography & Specifications
+   ========================================== */
+.txt h2 {
+    font-family: 'Georgia', serif;
+    font-size: 16.5pt;          /* Exact size constraint requested */
+    font-weight: 700;           /* Explicitly Bold */
+    color: #0f172a;             /* High contrast dark text */
+    margin-bottom: 18px;        /* Gap between header and paragraph */
+    border-bottom: 2px solid #e2e8f0; /* Crisp separation line under header */
+    padding-bottom: 8px;
+}
+
+.txt p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;            /* Exact size constraint requested */
+    font-weight: 400;
+    color: #334155;             /* Readable slate grey for text body */
+    line-height: 1.6;           /* Optimal line spacing for scanning */
 }
 
