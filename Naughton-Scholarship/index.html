@@ -21,18 +21,18 @@
     <div class="container">
         <article class="content-card">
             
-            <!-- Header Section with Button Next to Title -->
-            <header class="project-header-block">
+            <header>
+                <!-- Title & Button arranged linearly using native styling elements -->
                 <h1 class="project-title">The Naughton Scholarship</h1>
-                <a href="https://www.thenaughtonfoundation.com/apply" target="_blank" class="apply-box-btn">Apply here</a>
+                <a href="https://www.thenaughtonfoundation.com/apply" class="btn" target="_blank">Apply here</a>
             </header>
 
-            <!-- Main Image Underneath Header -->
-            <div class="main-project-image">
-                <img src="main-scholarship-image.jpg" alt="The Naughton Scholarship Award Presentation">
+            <!-- Main Image directly below header elements -->
+            <div style="margin: 1.5rem 0;">
+                <img src="main-scholarship-image.jpg" alt="The Naughton Scholarship Award Presentation" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px;">
             </div>
 
-            <!-- Content Section -->
+            <!-- Standard Body Content utilizing existing project typographic specs -->
             <section class="project-content">
                 <p>In October of 2025, I had the absolute privilege of being awarded the Naughton Scholarship. This award honors excellence in science, technology, engineering and mathematics. I am unbelievably grateful for the freedom this award has given me on my academic journey.</p>
                 
@@ -41,19 +41,22 @@
                 <p>Not only does the scholarship support you through a three to four year college degree financially - it offers the unexplainable experience of a weekend in a castle with your fellow scholars.</p>
                 
                 <p>I have met phenomenal people thanks to this achievement. Anyone who is sitting the Leaving Certificate exams with the intention of studying in STEM on the island of Ireland must apply - this is a massive opportunity.</p>
+                
+                <!-- Bottom Application Button -->
+                <p>
+                    <a href="https://www.thenaughtonfoundation.com/apply" class="btn" target="_blank">Apply here</a>
+                </p>
             </section>
 
-            <!-- Bottom Action Link -->
-            <div class="bottom-action-block">
-                <a href="https://www.thenaughtonfoundation.com/apply" target="_blank" class="apply-box-btn">Apply here</a>
-            </div>
-
-            <!-- 4 Related Images Grid Space -->
-            <section class="related-images-grid">
-                <div class="image-wrapper"><img src="related1.jpg" alt="Naughton Scholars Event 1"></div>
-                <div class="image-wrapper"><img src="related2.jpg" alt="Naughton Scholars Event 2"></div>
-                <div class="image-wrapper"><img src="related3.jpg" alt="Naughton Scholars Event 3"></div>
-                <div class="image-wrapper"><img src="related4.jpg" alt="Naughton Scholars Event 4"></div>
+            <!-- 4 Related Images Grid Area mimicking your Home Page Gallery structure -->
+            <section style="margin-top: 2.5rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
+                <h3 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 1rem; font-weight: 600;">Gallery</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <img src="related1.jpg" alt="Naughton Scholars Event 1" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="related2.jpg" alt="Naughton Scholars Event 2" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="related3.jpg" alt="Naughton Scholars Event 3" style="width: 100%; height: auto; border-radius: 4px;">
+                    <img src="related4.jpg" alt="Naughton Scholars Event 4" style="width: 100%; height: auto; border-radius: 4px;">
+                </div>
             </section>
 
             <footer>
