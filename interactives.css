@@ -1,0 +1,58 @@
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: #1e293b; /* Deep blue/grey navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    width: 100%;
+}
+
+.navbar .logo {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- Nav Links / Buttons --- */
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Active State Button --- */
+.nav-links a.active {
+    background-color: #2563eb; /* Bright blue highlighted button */
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* --- Inline Content Links --- */
+a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #1d4ed8;
+}
+
+/* --- Interactive Icons (LinkedIn) --- */
+.content-card img {
+    cursor: pointer;
+    border-radius: 4px;
+}
