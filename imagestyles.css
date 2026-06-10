@@ -18,18 +18,18 @@
 /* ==========================================================================
    Responsive Graphic Grid Gallery Framework
    ========================================================================== */
+/* Set margin-top to 0 to completely shut down the gap layout spacing bug */
 .related-images-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 0.4rem;
-    /* CHANGED: Dropped top margin from 2.5rem down to 0.5rem to pull images upward */
-    margin: 0.5rem 0 2.5rem 0; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 0 0 2.5rem 0;
 }
 
 /* Fixed-ratio visual viewport crop container */
 .image-wrapper {
-    background-color: #e2e8f0; /* Light fallback block color */
-    aspect-ratio: 4 / 3;       /* Stabilizes geometric box grid before download finishes */
+    background-color: #e2e8f0; 
+    aspect-ratio: 4 / 3;       
     border-radius: 6px;
     overflow: hidden;
     border: 1px dashed #cbd5e1;
@@ -56,5 +56,5 @@
 }
 
 .image-wrapper a:hover img {
-    transform: scale(1.03); /* Soft image layout micro-zoom effect */
+    transform: scale(1.03); 
 }

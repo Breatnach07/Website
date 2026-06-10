@@ -187,16 +187,14 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Consolidated: Replaces redundant .project-subheading and .post-subheading */
 .item-subheading {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #475569;
     font-style: italic;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.4;
 }
 
-/* Consolidated: Shared post-meta and project-meta styling structure */
 .item-meta {
     display: flex;
     gap: 1.5rem;
@@ -207,17 +205,16 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Consolidated: Shared regular paragraphs config */
+/* Bumps general copy up to an optimized, larger reading size site-wide */
 .item-content p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #334155;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
-/* Consolidated: Shared subheadings nested in context articles */
 .item-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #1e293b;
     margin: 2rem 0 1rem 0;
     font-weight: 600;
@@ -241,9 +238,4 @@ body {
     background-color: #f8fafc;
     color: #0f172a;
     font-weight: 600;
-}
-
-h3.gallery-title {
-    margin-top: 2.5rem !important;   /* Creates a clean break below the article text */
-    margin-bottom: 0.25rem !important; /* Eliminates the massive gap before images */
 }
