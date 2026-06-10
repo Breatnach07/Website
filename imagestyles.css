@@ -21,7 +21,7 @@
 .related-images-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 0.4rem;
+    gap: 1rem;
     margin: 2.5rem 0;
 }
 
