@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Main Top Banner Graphic Layouts
+   ========================================================================== */
+.main-item-image {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.main-item-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   Responsive Graphic Grid Gallery Framework
+   ========================================================================== */
+.related-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2.5rem 0;
+}
+
+/* Fixed-ratio visual viewport crop container */
+.image-wrapper {
+    background-color: #e2e8f0; /* Light fallback block color */
+    aspect-ratio: 4 / 3;       /* Stabilizes geometric box grid before download finishes */
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px dashed #cbd5e1;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Interactive Linked Graphic Frames configuration styling */
+.image-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.image-wrapper a img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.image-wrapper a:hover img {
+    transform: scale(1.03); /* Soft image layout micro-zoom effect */
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Naughton Scholarship</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/imagestyles.css">
 </head>
 <body>
 
@@ -18,22 +19,19 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container container-narrow">
         <article class="content-card">
             
-            <!-- Flex wrapper aligns title and button on the same line, pushing button to the top-right -->
-            <header style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-                <h1 class="project-title" style="margin-bottom: 0;">The Naughton Scholarship</h1>
-                <a href="https://www.thenaughtonfoundation.com/apply" class="btn" target="_blank" style="margin-top: 0;">Apply here</a>
+            <header class="item-header-block">
+                <h1 class="item-title">The Naughton Scholarship</h1>
+                <a href="https://www.thenaughtonfoundation.com/apply" class="apply-box-btn" target="_blank">Apply here</a>
             </header>
 
-            <!-- Main Image directly below header elements -->
-            <div style="margin: 1.5rem 0;">
-                <img src="assets\images\award.png" alt="The Naughton Scholarship Award Presentation" style="width: 80%; max-width: 180%; height: auto; border-radius: 4px;">
+            <div class="main-item-image">
+                <img src="assets/images/award.png" alt="The Naughton Scholarship Award Presentation">
             </div>
 
-            <!-- Standard Body Content utilizing existing project typographic specs -->
-            <section class="project-content">
+            <section class="item-content">
                 <p>In October of 2025, I had the absolute privilege of being awarded the Naughton Scholarship. This award honors excellence in science, technology, engineering and mathematics. I am unbelievably grateful for the freedom this award has given me on my academic journey.</p>
                 
                 <p>The Naughton foundation offers exceptional support and unimaginable opportunities to their scholars.</p>
@@ -42,24 +40,29 @@
                 
                 <p>I have met phenomenal people thanks to this achievement. Anyone who is sitting the Leaving Certificate exams with the intention of studying in STEM on the island of Ireland must apply - this is a massive opportunity.</p>
                 
-                <!-- Bottom Application Button -->
                 <p>
                     <a href="https://www.thenaughtonfoundation.com/apply" class="btn" target="_blank">Apply here</a>
                 </p>
             </section>
 
-            <!-- 4 Related Images Grid Area mimicking your Home Page Gallery structure -->
-            <section style="margin-top: 2.5rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
-                <h3 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 1rem; font-weight: 600;">Gallery</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                    <img src="assets\images\award_tcd.jpeg" alt="Naughton Awards" style="width: 100%; height: auto; border-radius: 4px;">
-                    <img src="assets\images\kylemorecastle.jpeg" alt="Kylemore Castle" style="width: 100%; height: auto; border-radius: 4px;">
-                    <img src="assets\images\view.jpeg" alt="View @ Kylemore" style="width: 100%; height: auto; border-radius: 4px;">
+            <section class="related-images-grid">
+                <h3 class="item-subheading">Gallery</h3>
+                
+                <div class="image-wrapper">
+                    <img src="assets/images/award_tcd.jpeg" alt="Naughton Awards">
+                </div>
+                
+                <div class="image-wrapper">
+                    <img src="assets/images/kylemorecastle.jpeg" alt="Kylemore Castle">
+                </div>
+                
+                <div class="image-wrapper">
+                    <img src="assets/images/view.jpeg" alt="View @ Kylemore">
                 </div>
             </section>
 
             <footer>
-                <a href="/" class="back-btn">&larr; Home</a>
+                <a href="/" class="back-link">&larr; Home</a>
             </footer>
 
         </article>
