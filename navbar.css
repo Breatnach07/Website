@@ -29,6 +29,7 @@
     font-size: 16pt;            /* Exact size constraint requested */
     font-weight: 400;
     color: #ffffff;           /* Readable white for text body */
+    text-decoration: none;      /* Prevent default link styling */
     line-height: 1.6;           /* Optimal line spacing for scanning */
     margin-bottom: 10px;        /* Space between list items */
 }
