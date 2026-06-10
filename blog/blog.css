@@ -1,0 +1,52 @@
+/* ==========================================================================  
+   Individual Blog Post Typography & Layout
+   ========================================================================== */
+
+/* Narrower text frame bounds for comfortable, optimal reading lengths */
+.post-container {
+    max-width: 750px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Subheading - Italicized introduction text */
+.post-subheading {
+    font-size: 1.25rem;
+    color: #475569;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Post Metadata Meta Row (Author, Date, etc.) */
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.post-meta strong {
+    color: #334155;
+}
+
+/* Article Body Paragraph Treatments */
+.post-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #334155;
+    line-height: 1.75; /* Balanced line spacing for easy scrolling */
+}
+
+/* Individual Content Section Headers (if you add sub-sections later) */
+.post-content h2, 
+.post-content h3 {
+    color: #0f172a;
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
