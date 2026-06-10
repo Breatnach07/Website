@@ -5,111 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Directory</title>
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/imagestyles.css">
-    <style>
-        /* Unique Layout Extensions for the Blog Grid Matrix */
-        .blog-header-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #0f172a;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        .blog-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 1.5rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-            transition: all 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 140px;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-2px);
-            border-color: #cbd5e1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .blog-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 0.25rem;
-        }
-
-        .blog-link {
-            color: #1e293b;
-            text-decoration: none;
-            transition: color 0.15s ease;
-        }
-
-        .blog-link:hover {
-            color: #2563eb;
-        }
-
-        .blog-date {
-            font-size: 0.85rem;
-            color: #64748b;
-            font-weight: 400;
-        }
-
-        /* Pagination Controls matching your Tab aesthetics */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.25rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .nav-arrow {
-            background-color: #e2e8f0;
-            color: #475569;
-            border: none;
-            border-radius: 4px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-
-        .nav-arrow:hover:not(.disabled) {
-            background-color: #cbd5e1;
-            color: #0f172a;
-        }
-
-        .nav-arrow.disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            background-color: #f1f5f9;
-            color: #94a3b8;
-        }
-
-        #page-indicator {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #475569;
-        }
-    </style>
 </head>
 <body>
 
@@ -126,14 +21,14 @@
     <div class="container">
         <main class="content-card">
             
-            <h1 class="blog-header-title">My Blogs</h1>
+            <h1 class="item-title">My Blogs</h1>
             
-            <div class="blog-grid" id="blog-grid"></div>
+            <div class="collage-grid" id="blog-grid"></div>
 
-            <div class="pagination">
-                <div class="nav-arrow" id="prev-btn" onclick="changePage(-1)">&larr;</div>
-                <span id="page-indicator">Page 1</span>
-                <div class="nav-arrow" id="next-btn" onclick="changePage(1)">&rarr;</div>
+            <div class="tabs" style="justify-content: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e2e8f0;">
+                <button class="nav-links a" id="prev-btn" onclick="changePage(-1)" style="border: none; cursor: pointer; padding: 0.5rem 1.2rem;">&larr;</button>
+                <span id="page-indicator" style="font-weight: 600; color: #475569; align-self: center; font-size: 0.95rem; margin: 0 1rem;">Page 1</span>
+                <button class="nav-links a" id="next-btn" onclick="changePage(1)" style="border: none; cursor: pointer; padding: 0.5rem 1.2rem;">&rarr;</button>
             </div>
 
         </main>
@@ -155,7 +50,6 @@
         const pageIndicator = document.getElementById('page-indicator');
 
         function initBlogSystem(data) {
-            // Sorts array by ID descending before execution starts
             blogPosts = data.sort((a, b) => b.id - a.id);
             displayPosts(currentPage);
         }
@@ -170,13 +64,21 @@
 
             pageItems.forEach(post => {
                 const card = document.createElement('div');
-                card.className = 'blog-card';
+                // Maps dynamically to the global asset frame and interactive micro-interaction transitions
+                card.className = 'collage-item';
+                // Inline styles injected strictly to handle internal content stretching
+                card.style.height = 'auto';
+                card.style.padding = '1.5rem';
+                card.style.display = 'flex';
+                card.style.flexDirection = 'column';
+                card.style.justifyContent = 'between';
+                
                 card.innerHTML = `
                     <div>
-                        <h2 class="blog-title">
-                            <a href="${post.url}" class="blog-link">${post.title}</a>
-                        </h2>
-                        <div class="blog-date">${post.date}</div>
+                        <h3 class="item-subheading" style="margin-bottom: 0.5rem;">
+                            <a href="${post.url}" style="color: #1e293b; text-decoration: none;">${post.title}</a>
+                        </h3>
+                        <div class="item-meta" style="border: none; padding: 0; margin: 0; font-size: 0.85rem;">${post.date}</div>
                     </div>
                 `;
                 gridContainer.appendChild(card);
@@ -185,8 +87,22 @@
             const totalPages = Math.ceil(blogPosts.length / ITEMS_PER_PAGE) || 1;
             pageIndicator.innerText = `Page ${page} of ${totalPages}`;
             
-            prevBtn.classList.toggle('disabled', page === 1);
-            nextBtn.classList.toggle('disabled', endIndex >= blogPosts.length);
+            // Re-map active states to keep visibility profiles elegant
+            if (page === 1) {
+                prevBtn.style.opacity = '0.4';
+                prevBtn.style.cursor = 'not-allowed';
+            } else {
+                prevBtn.style.opacity = '1';
+                prevBtn.style.cursor = 'pointer';
+            }
+
+            if (endIndex >= blogPosts.length) {
+                nextBtn.style.opacity = '0.4';
+                nextBtn.style.cursor = 'not-allowed';
+            } else {
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            }
         }
 
         function changePage(direction) {
@@ -200,7 +116,6 @@
             }
         }
 
-        // Initialize Engine execution
         initBlogSystem(blogPosts);
     </script>
 </body>
