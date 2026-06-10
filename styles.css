@@ -20,7 +20,7 @@ body {
 }
 
 .main-content {
-    margin-top: 180px; /* Keeps your container clear of the fixed navbar */
+    margin-top: 75px; /* Keeps your container clear of the fixed navbar */
     padding: 40px 20px;
     width: 100%;
 }
