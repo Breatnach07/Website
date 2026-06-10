@@ -22,7 +22,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 0.4rem;
-    margin: 2.5rem 0;
+    /* CHANGED: Dropped top margin from 2.5rem down to 0.5rem to pull images upward */
+    margin: 0.5rem 0 2.5rem 0; 
 }
 
 /* Fixed-ratio visual viewport crop container */
