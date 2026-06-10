@@ -1,0 +1,77 @@
+/* ==========================================
+   1. Global CSS Reset & Setup
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   2. Design Tokens (Variables)
+   ========================================== */
+:root {
+    /* Color Palette matching your screenshot architecture */
+    --bg-dark-blue: #1e293b;       /* Navbar solid background */
+    --body-bg: #f8fafc;             /* Main canvas background (light grey) */
+    
+    /* Button Color Tokens */
+    --btn-active-bg: #2563eb;       /* High-contrast solid blue button */
+    --btn-active-text: #ffffff;
+    --btn-inactive-bg: #2e3d52;     /* Muted grey/blue box */
+    --btn-inactive-text: #94a3b8;
+    --btn-hover-bg: #3b4e68;
+    --btn-hover-text: #ffffff;
+    
+    /* Global Typography */
+    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-serif: 'Georgia', serif;
+}
+
+/* ==========================================
+   3. Base Element Styling
+   ========================================== */
+body {
+    font-family: var(--font-sans);
+    background-color: var(--body-bg);
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   4. Page Structural Layout Wrapper
+   ========================================== */
+.main-content {
+    /* Push content down exactly by navbar height to prevent overlap */
+    margin-top: 75px; 
+    padding: 60px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 75px);
+}
+
+/* Sample landing page element layout */
+.hero {
+    text-align: center;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #475569;
+}
