@@ -242,8 +242,3 @@ body {
     color: #0f172a;
     font-weight: 600;
 }
-
-h3.gallery-title {
-    margin-top: 2.5rem !important;   /* Creates a clean break below the article text */
-    margin-bottom: 0.25rem !important; /* Eliminates the massive gap before images */
-}
