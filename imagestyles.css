@@ -1,60 +1,49 @@
-/* ==========================================================================
-   Main Top Banner Graphic Layouts
-   ========================================================================== */
-.main-item-image {
-    width: 100%;
-    margin-bottom: 2rem;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.main-item-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-/* ==========================================================================
-   Responsive Graphic Grid Gallery Framework
-   ========================================================================== */
-/* Set margin-top to 0 to completely shut down the gap layout spacing bug */
-.related-images-grid {
+/* --- Collage Grid Layout --- */
+.collage-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 0 0 2.5rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+    width: 100%;
 }
 
-/* Fixed-ratio visual viewport crop container */
-.image-wrapper {
-    background-color: #e2e8f0; 
-    aspect-ratio: 4 / 3;       
+/* --- Collage Items & Large Individual Images --- */
+.collage-item {
+    display: block;
+    width: 100%;
+    overflow: hidden;
     border-radius: 6px;
-    overflow: hidden;
-    border: 1px dashed #cbd5e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.image-wrapper img {
+.collage-img {
     width: 100%;
-    height: 100%;
+    height: 220px; /* Uniform height for clean alignment */
+    object-fit: cover; /* Prevents stretching or distortion */
     display: block;
-    object-fit: cover;
+    transition: opacity 0.2s ease;
 }
 
-/* Interactive Linked Graphic Frames configuration styling */
-.image-wrapper a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    overflow: hidden;
+/* --- Image Interactive States --- */
+.collage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.image-wrapper a img {
-    transition: transform 0.2s ease-in-out;
+.collage-item:hover .collage-img {
+    opacity: 0.95;
 }
 
-.image-wrapper a:hover img {
-    transform: scale(1.03); 
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .collage-grid {
+        grid-template-columns: 1fr; /* Stack images vertically on mobile */
+    }
+    
+    .navbar {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
