@@ -238,22 +238,56 @@ a:hover {
    Consolidated Image & Grid Layout Ecosystem (Rule 1 Fix)
    ========================================================================== */
 /* Consolidated .related-images-grid and .collage-grid into a single unified layout rule */
-.related-images-grid, .collage-grid {
+/* ==========================================
+   Gallery Collage Layout
+   ========================================== */
+
+.collage-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 1.2rem;
-    margin: 2.5rem 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 12px;
+    margin-top: 2rem;
 }
 
-/* Consolidated .image-wrapper and .collage-item into a single asset framework block */
-.image-wrapper, .collage-item {
-    background-color: #f8fafc;
-    aspect-ratio: 4 / 3;
-    border-radius: 6px;
+.collage-item {
     overflow: hidden;
-    border: 1px solid #e2e8f0;
+    border-radius: 10px;
     display: block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.collage-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.collage-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.collage-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .collage-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+
+    .collage-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
 }
 
 .image-wrapper:hover, .collage-item:hover {
