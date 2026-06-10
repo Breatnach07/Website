@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon: AI & The Environment</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/imagestyles.css">
+    <style>
+        /* Container constraints optimized for banner layout */
+        .container {
+            max-width: 800px;
+        }
+
+        .teaser-card {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: #dc2626;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .post-subheading {
+            font-size: 1.2rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.6;
+        }
+
+        /* Countdown Grid Module */
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .countdown-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 1rem;
+            min-width: 80px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        .countdown-time {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.2;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Eden Breatnach</div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/apps/">Mobile Apps</a>
+            <a href="/blog/" class="active">Blog</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="content-card teaser-card">
+            
+            <div class="coming-soon-badge">Coming Soon</div>
+            
+            <h1 class="post-title">AI & The Environment</h1>
+            <p class="post-subheading">
+                An engineering perspective on the physical costs of training neural models, silicon supply chains, and whether optimization algorithms can offset their own massive footprint.
+            </p>
+            
+            <div class="countdown-grid">
+                <div class="countdown-item">
+                    <span class="countdown-time" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-time" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-time" id="minutes">00</span>
+                    <span class="countdown-label">Mins</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-time" id="seconds">00</span>
+                    <span class="countdown-label">Secs</span>
+                </div>
+            </div>
+
+            <footer>
+                <a href="/blog/" class="back-link">&larr; Back to Blog Index</a>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // Set direct precision release timestamp (June 15, 2026 at midnight)
+        const targetDate = new Date("June 15, 2026 00:00:00").getTime();
+
+        function runCountdownEngine() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // Mathematical tracking configurations
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            // Calculation mapping formulas
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update DOM representations with padded zero strings
+            document.getElementById("days").innerText = String(d).padStart(2, '0');
+            document.getElementById("hours").innerText = String(h).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+        }
+
+        // Initialize execution loop immediately and anchor to window thread interval
+        runCountdownEngine();
+        setInterval(runCountdownEngine, 1000);
+    </script>
+</body>
+</html>
