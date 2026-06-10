@@ -26,3 +26,23 @@ body {
     width: 100%;
 }
 
+/* ==========================================
+   Typography & Specifications
+   ========================================== */
+.txt h2 {
+    font-family: 'Georgia', serif;
+    font-size: 16.5pt;          /* Exact size constraint requested */
+    font-weight: 700;           /* Explicitly Bold */
+    color: #0f172a;             /* High contrast dark text */
+    margin-bottom: 18px;        /* Gap between header and paragraph */
+    border-bottom: 2px solid #e2e8f0; /* Crisp separation line under header */
+    padding-bottom: 8px;
+}
+
+.txt p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;            /* Exact size constraint requested */
+    font-weight: 400;
+    color: #334155;             /* Readable slate grey for text body */
+    line-height: 1.6;           /* Optimal line spacing for scanning */
+}
