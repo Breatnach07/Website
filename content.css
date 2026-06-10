@@ -1,0 +1,14 @@
+/* ==========================================
+   Central Content Card Architecture
+   ========================================== */
+.content-container {
+    width: 50%;                 /* Takes up exactly half the webpage width */
+    max-width: 900px;           /* Prevents it from getting too wide on ultra-wide monitors */
+    min-width: 320px;           /* Prevents it from crushing on mobile devices */
+    margin: 0 auto;             /* Centers the box horizontally within the page */
+    background-color: #ffffff;  /* Solid white card structure */
+    padding: 40px;              /* Internal breathing room for text */
+    border-radius: 8px;         /* Subtle edge smoothing */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+

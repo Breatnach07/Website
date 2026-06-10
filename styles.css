@@ -14,64 +14,35 @@ html, body {
     min-height: 100vh;
 }
 
-/* ==========================================
-   2. Design Tokens (Variables)
-   ========================================== */
-:root {
-    /* Color Palette matching your screenshot architecture */
-    --bg-dark-blue: #1e293b;       /* Navbar solid background */
-    --body-bg: #f8fafc;             /* Main canvas background (light grey) */
-    
-    /* Button Color Tokens */
-    --btn-active-bg: #2563eb;       /* High-contrast solid blue button */
-    --btn-active-text: #ffffff;
-    --btn-inactive-bg: #2e3d52;     /* Muted grey/blue box */
-    --btn-inactive-text: #94a3b8;
-    --btn-hover-bg: #3b4e68;
-    --btn-hover-text: #ffffff;
-    
-    /* Global Typography */
-    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-serif: 'Georgia', serif;
-}
-
-/* ==========================================
-   3. Base Element Styling
-   ========================================== */
 body {
-    font-family: var(--font-sans);
-    background-color: var(--body-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc; 
     color: #1e293b;
-    line-height: 1.6;
+}
+
+.main-content {
+    margin-top: 75px; /* Keeps your container clear of the fixed navbar */
+    padding: 40px 20px;
+    width: 100%;
 }
 
 /* ==========================================
-   4. Page Structural Layout Wrapper
+   Typography & Specifications
    ========================================== */
-.main-content {
-    /* Push content down exactly by navbar height to prevent overlap */
-    margin-top: 75px; 
-    padding: 60px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 75px);
+.txt h2 {
+    font-family: 'Georgia', serif;
+    font-size: 16.5pt;          /* Exact size constraint requested */
+    font-weight: 700;           /* Explicitly Bold */
+    color: #0f172a;             /* High contrast dark text */
+    margin-bottom: 18px;        /* Gap between header and paragraph */
+    border-bottom: 2px solid #e2e8f0; /* Crisp separation line under header */
+    padding-bottom: 8px;
 }
 
-/* Sample landing page element layout */
-.hero {
-    text-align: center;
-    max-width: 700px;
-}
-
-.hero h1 {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    color: #0f172a;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: #475569;
+.txt p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;            /* Exact size constraint requested */
+    font-weight: 400;
+    color: #334155;             /* Readable slate grey for text body */
+    line-height: 1.6;           /* Optimal line spacing for scanning */
 }
