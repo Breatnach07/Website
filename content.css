@@ -18,8 +18,8 @@
    Typography & Specifications
    ========================================== */
 .txt h2 {
-    font-family: 'Aptos Serif','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15pt;          /* Exact size constraint requested */
+    font-family: 'Georgia', serif;
+    font-size: 16.5pt;          /* Exact size constraint requested */
     font-weight: 700;           /* Explicitly Bold */
     color: #0f172a;             /* High contrast dark text */
     margin-bottom: 18px;        /* Gap between header and paragraph */
@@ -28,19 +28,10 @@
 }
 
 .txt p {
-    font-family: 'Aptos Serif','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 12pt;            /* Exact size constraint requested */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;            /* Exact size constraint requested */
     font-weight: 400;
     color: #334155;             /* Readable slate grey for text body */
     line-height: 1.6;           /* Optimal line spacing for scanning */
-}
-
-.txt li {
-    font-family: 'Aptos Serif', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 12pt;            /* Exact size constraint requested */
-    font-weight: 400;
-    color: #334155;             /* Readable slate grey for text body */
-    line-height: 1.6;           /* Optimal line spacing for scanning */
-    margin-bottom: 10px;        /* Space between list items */
 }
 
