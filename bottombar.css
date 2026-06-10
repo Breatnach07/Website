@@ -1,0 +1,30 @@
+.bottom-bar {
+
+    height: 50px;
+
+    background-color: #0b607e;
+
+    border-top: 2px solid #07384a;
+
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 120px;
+}
+
+.footer-icons {
+
+    display: flex;
+    gap: 10px;
+}
+
+.footer-icons img {
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+}

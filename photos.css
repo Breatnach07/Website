@@ -1,0 +1,36 @@
+.photo-grid {
+
+    margin-top: 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.photo-box {
+
+    height: 135px;
+
+    border: 2px solid #07384a;
+
+    background-color: #0b607e;
+
+    overflow: hidden;
+}
+
+.photo-box img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.3s;
+}
+
+.photo-box:hover img {
+
+    transform: scale(1.05);
+}
