@@ -29,7 +29,7 @@
    sitename & Typography
    ========================================== */
 .sitename h3 {
-    font: Serif;
+    font-family: 'Aptos Serif', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16pt;            /* Exact size constraint requested */
     font-weight: 400;
     color: #ffffff;           /* Readable white for text body */
@@ -59,7 +59,7 @@
     border-radius: 6px;
     transition: background-color 0.2s ease, color 0.2s ease;
     display: inline-block;
-    font: Serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* Prevents the text within buttons from forcing text line breaks */
     white-space: nowrap; 
 }
