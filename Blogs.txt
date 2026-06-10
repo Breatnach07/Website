@@ -29,4 +29,49 @@ my own takes on both the faults and benefits of modern technology.
 ===================================================================
 A deep dive into the facts - Both the problems, but also the reality.
 
-One of the most topical 
+Today, the most  topical subject is Artificial Intelligence without a doubt.
+Between the ethics of using generative AI, to the envrionmental impact of data
+centres - people are arguing daily about AI.
+
+However, with peoples identities being shaped around whether or not they are
+"pro-AI" or "anti-AI" - facts are lost.
+Don't get me wrong, I find GenAI terrifying - the fact it can write faster than
+me, often times better. The fact it can produce pieces of "art" in meere 
+miliseconds. The fact GenAI has been used to target vulnerable groups with 
+blackmail and manipulation.
+
+There is no ambiguity - AI has evils that must be assessed and destroyed.
+
+However, the topic of this blog is a seperate "issue" - Artificial Intelligence 
+and our plannet. I have yet to witness a day in the era of AI where someone is 
+not spouting misinformation about its impact on the Environment. Tiktok and 
+instagram have all collectively decided that the AI industry is the sole reason 
+we will undergo water shortage. 
+
+Figures such as 560 billion litres of water consumed by global data centres per 
+annum may not be factually incorrect - however, they are most certainly misleading.
+
+Humans don't understand numbers as stand alone items - we need a comparison to 
+understand the actual impact of this consumption. For example, the global fashion
+industry consumes at least 80 Trillion liters of water annualy. That is more than
+140 times as much as the current AI industry, and is still 9 times more than global 
+projections for AI at its peak.  
+
+Of course, two wrongs do not make a right - but to blame a scarcity of water on AI 
+is just wrong. IoT Technology is generally the least of our concerns with respect to 
+the Environment. Even when IoT uses up carbon emissions, it often reaches a point
+of being a net positive environmentally. For example, people being able to work from 
+home has reduced global emissions, despite the fact that they require wireless networks 
+to do so.
+
+AI has yet to provide a positive in the workforce - and perhaps it won't. However,
+to claim AI is going to kill our planet ignores the real industries that are killing
+the planet. You cant put all your energy into a pickpocket when there are serial killers
+walking around - and focusing on AI instead of fast fashion or the meat industry is doing
+that for the environment.
+
+There are most certainly valid conversations about AI that must be had - however, it's 
+environmental concerns are definitely the bottom of that list.
+
+If you have a different opinion on this, or facts to dispute what I say - email me:
+<a href="mailto:main.edenbreatnach@outlook.com">main.edenbreatnach@outlook.com</a>
