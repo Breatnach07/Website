@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Eden Breatnach</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Contextual styles specific to the 404 canvas layout */
+        .error-container {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 800;
+            color: #1e293b;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+        }
+
+        .error-title {
+            font-size: 1.75rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .error-message {
+            color: #475569;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Subtle animated illustration element using system colors */
+        .error-graphic {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem auto;
+            border: 4px dashed #cbd5e1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 3rem;
+            font-weight: bold;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Eden Breatnach</div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/apps/">Mobile Apps</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="content-card error-container">
+            
+            <div class="error-graphic">!</div>
+            
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page Not Found</h2>
+            
+            <p class="error-message">
+                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+            </p>
+            
+            <a href="/" class="btn" style="margin-top: 0; padding: 0.6rem 1.5rem;">Return to Homepage</a>
+            
+        </div>
+    </main>
+
+</body>
+</html>
