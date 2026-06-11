@@ -1,3 +1,0 @@
-RewriteEngine On
-# If someone requests the absolute root domain or index page
-RewriteRule ^$ /home/ [R=301,L]
