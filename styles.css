@@ -172,3 +172,59 @@ body {
         aspect-ratio: 16 / 9;              /* Makes preview bars wider on phone displays */
     }
 }
+
+/* ========== Header Text ==========
+
+/* Inline alignment container for titles and primary actions */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+/* Strips baseline heading margins to hand layout control to the flex wrapper */
+.header-title {
+    margin: 0;
+}
+
+/* ========== Action Buttons ==========
+
+/* Standardized configuration for header-aligned buttons */
+.action-btn {
+    margin-top: 0;        /* Overrides any default top margins inherited from .btn */
+    white-space: nowrap;  /* Guarantees button text does not break onto two lines */
+}
+
+/* Center-alignment wrapper for main contextual assets */
+.featured-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive constraints for a centered media block */
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;   /* Prevents high-res vertical images from blowing out viewport height */
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive rules for narrow viewports (Mobile stack) */
+@media (max-width: 600px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start; /* Drops action button vertically below title text */
+    }
+    
+    .action-btn {
+        width: 100%;             /* Optimizes mobile tap-targets by spanning full width */
+        text-align: center;
+    }
+}
