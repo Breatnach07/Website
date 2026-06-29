@@ -1,7 +1,7 @@
 export async function onRequestPost(context) {
   try {
     const input = await context.request.json();
-    const scriptURL = context.env.GOOGLE_SHEETS_SCRIPT_URL;
+    const scriptURL = context.env.NOTES_SCRIPT_URL;
 
     const response = await fetch(scriptURL, {
       method: "POST",
