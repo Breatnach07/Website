@@ -249,14 +249,14 @@ body {
 
 /* Enforce physical thumbnail restrictions (roughly 3 text lines high) */
 .project-thumb {
-    float: left;
-    width: 160px !important;       /* Hard constraint to prevent blowout */
-    height: 160px !important;      /* Keep aspect ratio square */
-    object-fit: cover;
-    margin-right: 1.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
+float: left !important;
+    width: 150px !important;       /* Twice as wide */
+    height: 150px !important;      /* Twice as long */
+    object-fit: cover !important;   /* Prevents stretching */
+    margin-right: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+    border-radius: 6px !important;
+    border: 1px solid #e2e8f0 !important;
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
