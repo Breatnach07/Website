@@ -228,9 +228,9 @@ body {
         text-align: center;
     }
 }
-
 /* ============== Project Directory ============= */
-/* List container setup */
+
+/* List container */
 .project-list {
     display: flex;
     flex-direction: column;
@@ -238,44 +238,48 @@ body {
     margin-top: 1.5rem;
 }
 
-/* Base card containing each project listing */
+/* Individual project container */
 .project-card {
     background: white;
-    padding: 1.25rem;
+    padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    overflow: hidden; /* Clears floats */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Automatically clears the floated image */
 }
 
-/* Enforce physical thumbnail restrictions (roughly 3 text lines high) */
+/* Project Image (Twice as large: 150px x 150px) */
 .project-thumb {
-float: left !important;
-    width: 150px !important;       /* Twice as wide */
-    height: 150px !important;      /* Twice as long */
-    object-fit: cover !important;   /* Prevents stretching */
-    margin-right: 1.5rem !important;
-    margin-bottom: 0.5rem !important;
-    border-radius: 6px !important;
-    border: 1px solid #e2e8f0 !important;
+    float: left;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-/* Visual cue when hovering over the image link */
+/* Hover effect on image */
 .project-link-wrapper:hover .project-thumb {
     transform: scale(1.03);
     border-color: #2563eb;
 }
 
-/* Text alignment body wrapper */
+/* Prevents description text from wrapping weirdly under the title */
 .project-body {
-    overflow: hidden; /* Keeps text flow structured alongside the float */
+    overflow: hidden; 
 }
 
-/* Clean, un-styled title links */
+/* Project title styling */
+.project-title {
+    margin-bottom: 0.5rem;
+}
+
 .project-title a {
     color: #1e293b;
     text-decoration: none;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 600;
 }
 
@@ -284,9 +288,9 @@ float: left !important;
     text-decoration: underline;
 }
 
-/* Wrap descriptions cleanly */
+/* Project description styling */
 .project-desc {
     color: #475569;
     font-size: 0.95rem;
-    margin-top: 0.25rem;
+    line-height: 1.6;
 }
