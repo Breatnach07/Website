@@ -250,8 +250,8 @@ body {
 /* Enforce physical thumbnail restrictions (roughly 3 text lines high) */
 .project-thumb {
     float: left;
-    width: 75px !important;       /* Hard constraint to prevent blowout */
-    height: 75px !important;      /* Keep aspect ratio square */
+    width: 160px !important;       /* Hard constraint to prevent blowout */
+    height: 160px !important;      /* Keep aspect ratio square */
     object-fit: cover;
     margin-right: 1.25rem;
     margin-bottom: 0.25rem;
