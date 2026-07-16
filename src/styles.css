@@ -229,32 +229,64 @@ body {
     }
 }
 
-/* ============== Project Images ============= */
-/* Project Card Container to isolate floats */
+/* ============== Project Directory ============= */
+/* List container setup */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Base card containing each project listing */
 .project-card {
     background: white;
-    padding: 1.5rem;
+    padding: 1.25rem;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    margin-top: 1.5rem;
-    overflow: hidden; /* Clears the float internally */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden; /* Clears floats */
 }
 
-/* Small, 3-line high thumbnail with text wrap */
+/* Enforce physical thumbnail restrictions (roughly 3 text lines high) */
 .project-thumb {
     float: left;
-    width: 70px;         /* Compact width */
-    height: 70px;        /* Matches height to keep it square (approx 3 lines of text) */
-    object-fit: cover;   /* Prevents squishing */
-    margin-right: 1rem;  /* Pushes text away from the right side of image */
-    margin-bottom: 0.5rem; /* Pushes text away from bottom of image */
-    border-radius: 6px;  /* Matches your design aesthetic */
+    width: 75px !important;       /* Hard constraint to prevent blowout */
+    height: 75px !important;      /* Keep aspect ratio square */
+    object-fit: cover;
+    margin-right: 1.25rem;
+    margin-bottom: 0.25rem;
+    border-radius: 6px;
     border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-/* Optional header styling inside the card */
-.project-card h3 {
-    margin-bottom: 0.25rem;
-    font-size: 1.1rem;
+/* Visual cue when hovering over the image link */
+.project-link-wrapper:hover .project-thumb {
+    transform: scale(1.03);
+    border-color: #2563eb;
+}
+
+/* Text alignment body wrapper */
+.project-body {
+    overflow: hidden; /* Keeps text flow structured alongside the float */
+}
+
+/* Clean, un-styled title links */
+.project-title a {
     color: #1e293b;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.project-title a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Wrap descriptions cleanly */
+.project-desc {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
 }
