@@ -17,18 +17,39 @@
         </nav>
     </header>
     <main class="container">
-        <h1>Projects</h1>
-        <p>Select a project tab below to view explanations and demonstrations.</p>
+        <div class="content-card">
+            
+            <h1>Projects</h1>
+            <p style="margin-bottom: 1.5rem;">Select a project to view explanations and demonstrations.</p>
 
-        <div class="tabs">
-            <a href="/projects/LC-Technology/" class="active">Leaving Cert Technology</a>
-            <a href="/projects/wakemeup/">WakeMeUp</a>
-        </div>
+            <div class="project-list">
+        
+                <!-- Project 1: Leaving Cert Technology -->
+                <div class="project-entry">
+                    <a href="/projects/LC-Technology/" class="project-link-wrapper">
+                        <img src="/images/lc-tech-thumb.jpg" alt="Leaving Cert Technology" class="project-thumb-left">
+                    </a>
+                    <div class="project-body">
+                        <h3 class="project-title">
+                            <a href="/projects/LC-Technology/">Leaving Cert Technology</a>
+                        </h3>
+                        <p class="project-desc">A model rail system promoting sustainable transport between Dublin City and the Airport.</p>
+                    </div>
+                </div>
 
-        <div class="project-card">
-            <img src="path-to-your-image.jpg" alt="Leaving Cert Technology" class="project-thumb">
-            <h3>Leaving Cert Technology</h3>
-            <p>A model rail system promoting sustainable transport between Dublin City and the Airport. This description will wrap cleanly to the right of the image and continue underneath it if the text is long enough.</p>
+                <!-- Project 2: WakeMeUp -->
+                <div class="project-entry">
+                    <a href="/apps/WakeMeUp/" class="project-link-wrapper">
+                        <img src="/images/wakemeup-thumb.jpg" alt="WakeMeUp" class="project-thumb-left">
+                    </a>
+                    <div class="project-body">
+                        <h3 class="project-title">
+                            <a href="/apps/WakeMeUp/">WakeMeUp</a>
+                        </h3>
+                        <p class="project-desc">An alarm app that goes off when you reach your destination. Perfect for sleeping or focusing commuters.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
