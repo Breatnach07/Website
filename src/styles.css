@@ -28,22 +28,19 @@
     font-family: "Aptos Serif", Georgia, serif;
 }
 
-/* Size suffixes are CSS pixels; decimal points use hyphens (15.2px = serif15-2). */
-.serif10-72 { font-size: 10.72px; }
+/* Size suffixes are CSS pixels. */
+.serif10 { font-size: 10px; }
 .serif11 { font-size: 11px; }
 .serif12 { font-size: 12px; }
-.serif13-28 { font-size: 13.28px; }
-.serif13-33 { font-size: 13.333px; }
-.serif13-6 { font-size: 13.6px; }
+.serif13 { font-size: 13px; }
 .serif14 { font-size: 14px; }
-.serif14-4 { font-size: 14.4px; }
-.serif15-2 { font-size: 15.2px; }
+.serif15 { font-size: 15px; }
 .serif16 { font-size: 16px; }
-.serif17-6 { font-size: 17.6px; }
-.serif18-4 { font-size: 18.4px; }
-.serif18-72 { font-size: 18.72px; }
+.serif17 { font-size: 17px; }
+.serif18 { font-size: 18px; }
+.serif19 { font-size: 19px; }
 .serif20 { font-size: 20px; }
-.serif22-4 { font-size: 22.4px; }
+.serif22 { font-size: 22px; }
 .serif24 { font-size: 24px; }
 .serif28 { font-size: 28px; }
 .serif32 { font-size: 32px; }
