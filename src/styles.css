@@ -80,7 +80,7 @@ body {
     align-items: center;
 }
 
-.mobile-menu summary {
+.mobile-menu-toggle {
     display: none;
 }
 
@@ -511,7 +511,7 @@ pre {
         margin-left: auto;
     }
 
-    .mobile-menu summary {
+    .mobile-menu-toggle {
         display: flex;
         width: 44px;
         height: 44px;
@@ -521,16 +521,14 @@ pre {
         gap: 5px;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 6px;
+        padding: 0;
+        background: transparent;
+        color: inherit;
         cursor: pointer;
-        list-style: none;
         -webkit-tap-highlight-color: transparent;
     }
 
-    .mobile-menu summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .mobile-menu summary span:not(.mobile-menu-summary-text) {
+    .mobile-menu-toggle span {
         display: block;
         width: 20px;
         height: 2px;
@@ -556,7 +554,7 @@ pre {
         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
     }
 
-    .mobile-menu:not([open]) > .nav-links {
+    .mobile-menu:not(.is-open) > .nav-links {
         display: none;
     }
 
