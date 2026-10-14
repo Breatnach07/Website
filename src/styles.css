@@ -457,7 +457,8 @@ body {
 }
 
 .CenteredMainImage {
-    width: clamp(300px, 100%, 450px);
+    width: min(100%, 450px);
+    min-width: 300px;
     height: auto;
     display: block;
     margin: auto;
@@ -605,8 +606,8 @@ pre {
     }
 
     .CenteredMainImage {
-        width: 100%;
-        max-width: 400px;
+        width: 300px;
+        max-width: 100%;
     }
 
     .legal-content p {
