@@ -457,7 +457,7 @@ body {
 }
 
 .CenteredMainImage {
-    width: 300px;
+    width: min(300px, 450px);
     height: auto;
     display: block;
     margin: auto;
