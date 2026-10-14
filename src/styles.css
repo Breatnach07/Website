@@ -84,6 +84,15 @@ body {
     display: none;
 }
 
+.mobile-menu summary {
+    display: none;
+    list-style: none;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+    display: none;
+}
+
 .mobile-menu > .nav-links {
     display: flex;
 }
