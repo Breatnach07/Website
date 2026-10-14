@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Details</title>
     <link rel="stylesheet" href="/styles.css">
+    <script src="/navigation.js" defer></script>
 </head>
 <body class="serif serif16">
     <header class="navbar nav_font">
         <div class="logo nav_font serif20">Eden Breatnach</div>
-        <details class="mobile-menu">
-            <summary><span class="mobile-menu-summary-text">Navigation menu</span><span></span><span></span><span></span></summary>
-            <nav class="nav-links nav_font">
+        <div class="mobile-menu">
+            <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+            <nav class="nav-links nav_font" id="primary-navigation">
             <a href="/" class="serif15">Home</a>
             <a href="/projects/" class="active serif15">Projects</a>
             <a href="/apps/" class="serif15">Mobile Apps</a>
             </nav>
-        </details>
+        </div>
     </header>
     <main class="container">
         <div class="content-card">
