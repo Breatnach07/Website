@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details</title>
+    <title>Self-Stabilising Table | Eden Breatnach</title>
     <link rel="stylesheet" href="/styles.css?v=20261014-1204">
     <script src="/navigation.js?v=20261014-1204" defer></script>
 </head>
@@ -21,35 +21,120 @@
     </header>
     <main class="container">
         <div class="content-card">
-            <h2 class="heading_font serif24">Self-Stabilising Table</h2>
-            <p><i>A table that uses sensors and motors to maintain stability.</i></p>
+            <h1 class="heading_font serif32">Self-Stabilising Table</h1>
+            <p class="intro-copy"><i>A two-axis platform that senses acceleration and moves beneath an object to keep it level.</i></p>
 
-             <p class="serif17 project-copy">
-                On the side of my studies in university, the first project I built was a self-stabilising table. 
-                I was inspired one day after sitting on a bus, and saw my coffee spill before my eyes when the bus' acceleration
-                caused led to the object sliding. This made me think about pool tables on board cruise ships - which have
-                self-stabilising mechanisms to ensure the balls don't slide. </p>
-
-            <p class="serif17 project-copy">
-                Hence, I looked into designing my own approach to this problem. This was a great gateway to learning about sensors 
-                - in particular a gyroscope. Designing my own solution helped the creative side of my brain flourish. This was
-                something I felt I was missing deeply in university - where everything was so theory dense. I ended up summarising my design
-                goals to ensure I built a system that suited my initial vision:
-                <div style="height: 0.4mm;"></div>
-            <ul style="list-style-type: square; margin-left: 1.5rem; margin-bottom: 2rem; color: #475569; display: flex; flex-direction: column; gap: 0.4rem;">
-                <li>A gyroscope - sensing motion of the table.</li>
-                <li>A fast response system - telling the motors where to go.</li>
-                <li>Quick and precise control of stabilisation by motors.</li>
-            </ul></p>
+            <figure class="project-figure project-figure-hero">
+                <img src="assembly-cad.png" alt="CAD assembly view of the self-stabilising table mechanism">
+                <figcaption>Final mechanical concept with two-axis tilt control and a compact motor chassis.</figcaption>
+            </figure>
 
             <p class="serif17 project-copy">
-                When I designed a mechanical solution, the first thing I did was design a 3D model, and built 
-                <a href="/projects/self-stabilising-table/prototype1/" class="link">the first prototype.</a> After this point, I had a full list of 
-                required parts - but I needed the money to build a full version. I was very lucky to have been awarded a 
-                <a href="https://joinpatch.org/grants" class="link">Patch Grant</a> which covered my parts list.
+                The idea began on a bus, when a sharp turn sent a coffee cup sliding from the table. It led to a practical
+                investigation of gimbal-like systems: if the platform could detect and respond to vehicle motion quickly,
+                it could tilt beneath the supported object to keep it stable.
             </p>
 
-            <p></p>
+            <p class="serif17 project-copy">
+                The project was designed around three core requirements: sensing motion in multiple axes, calculating the
+                required tilt, and moving the platform quickly and precisely. It became an exercise in mechatronics rather
+                than a purely theoretical gyroscope project.
+            </p>
+
+            <h2 class="heading_font serif24 project-section-title">How the control system works</h2>
+            <div class="project-two-column">
+                <figure class="project-figure">
+                    <img src="force-model.jpeg" alt="Hand-drawn force diagram for a tilted platform">
+                    <figcaption>Measuring platform tilt and the forces acting on the supported object.</figcaption>
+                </figure>
+                <div>
+                    <p class="serif17 project-copy">
+                        An MPU6050 six-axis sensor provides acceleration and angular-rate data to an ESP32 microcontroller.
+                        The controller calculates the orientation correction and sends synchronized step and direction signals
+                        to the two motor drivers.
+                    </p>
+                    <p class="serif17 project-copy">
+                        Two NEMA 23 stepper motors drive the X and Y axes through a gear and linkage arrangement. TMC2209
+                        drivers provide quieter, controllable stepper operation, while the power system separates logic and
+                        motor supplies to improve stability.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="heading_font serif24 project-section-title">Mechanical development</h2>
+            <div class="project-two-column project-two-column-reverse">
+                <figure class="project-figure">
+                    <img src="actuator-concept.jpeg" alt="Initial screw-thread actuator sketches">
+                    <figcaption>Early screw-thread actuator concept.</figcaption>
+                </figure>
+                <div>
+                    <h3 class="heading_font serif20">Prototype 1: screw-thread actuation</h3>
+                    <p class="serif17 project-copy">
+                        The first mechanism used screw-thread actuators to raise and lower parts of the platform. It was useful
+                        for testing the geometry, but the arrangement had slow response and limited the platform's ability to
+                        react to rapid changes.
+                    </p>
+                    <p class="serif17 project-copy">
+                        This led to a more direct tilting mechanism in which each axis has its own stepper-controlled joint.
+                        The revised layout provides more useful torque, faster movement and independent X/Y control.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-gallery">
+                <figure class="project-figure">
+                    <img src="tilt-mechanism.jpeg" alt="Simplified CAD sketch of the two-axis tilt mechanism">
+                    <figcaption>Two-axis tilt layout with increased moment arms.</figcaption>
+                </figure>
+                <figure class="project-figure">
+                    <img src="mechanism-side-view.jpeg" alt="Side view of the revised table mechanism">
+                    <figcaption>Revised mechanism and pivot geometry.</figcaption>
+                </figure>
+                <figure class="project-figure">
+                    <img src="baseplate-cad.png" alt="CAD rendering of the baseplate">
+                    <figcaption>Baseplate designed for detachable mounting brackets.</figcaption>
+                </figure>
+            </div>
+
+            <h2 class="heading_font serif24 project-section-title">Validation and testing</h2>
+            <p class="serif17 project-copy">
+                Real bus acceleration measurements were used to understand the motion the table needed to handle. Data collection
+                focused on large acceleration changes over short periods, helping define a control target rather than relying
+                only on idealised movement.
+            </p>
+            <p class="serif17 project-copy">
+                The final design targets rapid angle corrections while maintaining structural stability. Mechanical stiffness,
+                motor torque, sensor response and software timing are all considered together so that the platform can act
+                quickly without introducing excessive vibration.
+            </p>
+
+            <h2 class="heading_font serif24 project-section-title">System architecture</h2>
+            <ul class="project-feature-list">
+                <li><strong>Platform:</strong> rigid table surface, MPU6050 sensor and detachable brackets.</li>
+                <li><strong>Actuation:</strong> NEMA 23 motors, timing-belt gearing and independent X/Y mechanisms.</li>
+                <li><strong>Control:</strong> ESP32 reads sensor data and controls TMC2209 motor drivers.</li>
+                <li><strong>Power:</strong> regulated control supply with motor-power isolation and cooling.</li>
+            </ul>
+
+            <h2 class="heading_font serif24 project-section-title">Project files</h2>
+            <p class="serif17 project-copy">Selected neutral STL components are available for inspection:</p>
+            <div class="download-options">
+                <div class="download-option">
+                    <h4>Base plate</h4>
+                    <p class="download-option-description">Main mounting plate from the mechanical assembly.</p>
+                    <a class="btn" href="BasePlate.stl" download>Download STL</a>
+                </div>
+                <div class="download-option">
+                    <h4>Long base beam</h4>
+                    <p class="download-option-description">Structural beam component for the prototype chassis.</p>
+                    <a class="btn" href="BaseBeam-Long.stl" download>Download STL</a>
+                </div>
+                <div class="download-option">
+                    <h4>Long cross beam</h4>
+                    <p class="download-option-description">Cross beam component for the mechanical frame.</p>
+                    <a class="btn" href="CrossBeam-Long.stl" download>Download STL</a>
+                </div>
+            </div>
         </div>
     </main>
 </body>

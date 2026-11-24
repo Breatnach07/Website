@@ -479,6 +479,75 @@ body {
     color: #64748b;
 }
 
+.project-section-title {
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.project-figure {
+    margin: 0 0 1.5rem;
+}
+
+.project-figure img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    display: block;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.project-figure-hero {
+    max-width: 720px;
+    margin: 1.5rem auto 2rem;
+}
+
+.project-figure figcaption {
+    margin-top: 0.6rem;
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.project-two-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.project-two-column-reverse .project-figure {
+    order: 2;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.project-feature-list {
+    margin: 0 0 1.5rem 1.5rem;
+    color: #334155;
+    display: grid;
+    gap: 0.55rem;
+}
+
+@media (max-width: 760px) {
+    .project-two-column,
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-two-column-reverse .project-figure {
+        order: 0;
+    }
+}
+
 .legal-intro {
     margin-top: 1rem;
 }
